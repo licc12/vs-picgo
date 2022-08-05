@@ -38,5 +38,6 @@ export const getAllUploaderConfigs = async () =>
   )
 
 /** Set picgo config */
-export const setConfig = async (...args: Parameters<PicgoAPI['setConfig']>) =>
-  await channel.call(W2VMessage.SET_CONFIG, args)
+export const setConfig = async (...args: Parameters<PicgoAPI['setConfig']>) => {
+  return await channel.call(W2VMessage.SET_CONFIG, args)
+}

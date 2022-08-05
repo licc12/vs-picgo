@@ -50,7 +50,8 @@
 ## Settings
 
 - Default
-  - The default image hosting is [SM.MS](https://sm.ms/).
+
+  - The default image hosting is [gitlab](https://gitlab.example.com/).
 
 - Custom
 

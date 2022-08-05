@@ -1,12 +1,13 @@
 {
-  "ext.displayName": "PicGo",
+  "ext.displayName": "PicGo-GitLab",
   "ext.description": "A fast and powerful image uploading plugin for VSCode based on PicGo. Supports most image types (png, jpg, gif, etc.) and many image hosting services (smms, qiniu, imgur, etc.)!",
+  "command.upload.updateSetting.title": "Update PicGo Setting",
   "command.upload.clipboard.title": "Upload from clipboard",
   "command.upload.explorer.title": "Upload from explorer",
   "command.upload.inputBox.title": "Upload from input box",
   "command.webview.demo.title": "Open demo page",
   "command.webview.picGoControlPanel.title": "Open PicGo Control Panel",
-  "config.title": "PicGo",
+  "config.title": "PicGo-GitLab",
   "config.configPath.description": "The path to your PicGo-Core configuration. PicGo will use `#picgo.picBed#` if this is not specified. Please see [PicGo-Core Docs](https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) and [PicGo Docs](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E5%9B%BE%E5%BA%8A%E5%8C%BA) for more detail about configuration file.",
   "config.dataPath.description": "The path to your data file, including all uploaded images' info. PicGo will use `your_home_dir/vs-picgo-data.json` if this is not specified.",
   "config.customUploadName.description": "Customize the name of the image to be uploaded, image will be renamed before uploading.\n- `${fileName}`: the name of the original image, without extension name.\n **Notice: If you selected some text before uploading, the selection will become the `fileName` of the image to be uploaded.**\n- `${extName}`: the extension name of the original image.\n- `${mdFileName}`: the name of the current editing markdown file.\n- `${date}`: YY-MM-DD formatted date.\n- `${dateTime}`: YY-MM-DD-hh-mm-ss formatted date.\n\nExamples:\n- `${fileName}-${date}${extName}` -> `picName-2016-07-25.jpg`\n- `${mdFileName}`-`${dateTime}${extName}` -> `markdownName-2017-04-12-22-28-10.jpg`",
@@ -22,5 +23,12 @@
   "config.picBed.github.description": "GitHub configuration.",
   "config.picBed.github.repo.description": "`Username/Repo`. For example, PicGo/Images",
   "config.picBed.aliyun.description": "Aliyun OSS configuration.",
-  "config.picBed.imgur.description": "Imgur picBed configuration."
+  "config.picBed.imgur.description": "Imgur picBed configuration.",
+  "config.picBed.gitlab.host.description": "gitlab host (eg:https://gitlab.com)",
+  "config.picBed.gitlab.group.description": "gitlab project's group name",
+  "config.picBed.gitlab.project.description": "gitlab project name",
+  "config.picBed.gitlab.project_id.description": "gitlab project id",
+  "config.picBed.gitlab.branch.description": "gitlab project branch",
+  "config.picBed.gitlab.token.description": "gitlab's api token",
+  "config.picBed.gitlab.path.description": "img path in response json (eg:url or data.url)"
 }

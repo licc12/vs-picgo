@@ -24,6 +24,15 @@ export interface IVSPicgoConfiguration {
   'picgo.picBed.github.customUrl': string | undefined
   'picgo.picBed.github.branch': string | undefined
 
+  // gitlab picBed
+  'picgo.picBed.gitlab.host': string | undefined
+  'picgo.picBed.gitlab.group': string | undefined
+  'picgo.picBed.gitlab.token': string | undefined
+  'picgo.picBed.gitlab.branch': string | undefined
+  'picgo.picBed.gitlab.project': string | undefined
+  'picgo.picBed.gitlab.project_id': string | undefined
+  'picgo.picBed.gitlab.path': string | undefined
+
   // imgur picBed
   'picgo.picBed.imgur.clientId': string | undefined
   'picgo.picBed.imgur.proxy': string | undefined
@@ -100,6 +109,15 @@ export const DEFAULT_CONFIGS: IVSPicgoConfiguration = {
   'picgo.picBed.github.path': '',
   'picgo.picBed.github.customUrl': '',
   'picgo.picBed.github.branch': '',
+
+  // gitlab picBed
+  'picgo.picBed.gitlab.host': '',
+  'picgo.picBed.gitlab.group': '',
+  'picgo.picBed.gitlab.token': '',
+  'picgo.picBed.gitlab.branch': '',
+  'picgo.picBed.gitlab.project': '',
+  'picgo.picBed.gitlab.project_id': '',
+  'picgo.picBed.gitlab.path': '',
 
   // imgur picBed
   'picgo.picBed.imgur.clientId': '',

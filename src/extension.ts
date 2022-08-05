@@ -1,12 +1,15 @@
 import * as vscode from 'vscode'
 import { CommandManager } from './vscode/CommandManager'
 import { PanelManager } from './vscode/PanelManager'
+import { PicgoAPI } from './vscode/PicgoAPI'
 
 export async function activate(context: vscode.ExtensionContext) {
   PanelManager.bindContext(context)
   const panelManager = PanelManager.panelManager
-
   const disposable = [
+    vscode.commands.registerCommand('picgo.upDateSetting', () =>
+      PicgoAPI.picgoAPI.initConfig()
+    ),
     vscode.commands.registerCommand(
       'picgo.uploadImageFromClipboard',
       async () => await CommandManager.commandManager.uploadImageFromClipboard()

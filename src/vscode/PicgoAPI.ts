@@ -28,13 +28,70 @@ export class PicgoAPI {
   }
 
   initConfig() {
-    this.setConfigIfNotExist(
+    const host = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.host')
+    if (host) {
+      this.setConfig('picBed.gitlab.host', host)
+    }
+
+    const group = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.group')
+    if (group) {
+      this.setConfig('picBed.gitlab.group', group)
+    }
+    const project = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.project')
+    if (project) {
+      this.setConfig('picBed.gitlab.project', project)
+    }
+
+    const projectId = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.project_id')
+    if (projectId) {
+      this.setConfig('picBed.gitlab.project_id', projectId)
+    }
+
+    const branch = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.branch')
+    if (branch) {
+      this.setConfig('picBed.gitlab.branch', branch)
+    }
+
+    const token = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.token')
+    if (token) {
+      this.setConfig('picBed.gitlab.token', token)
+    }
+
+    const path = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.gitlab.path')
+    if (path) {
+      this.setConfig('picBed.gitlab.path', path)
+    }
+
+    const customOutputFormat = vscode.workspace
+      .getConfiguration()
+      .get('picgo.customOutputFormat')
+
+    this.setConfig(
       'settings.vsPicgo.customOutputFormat',
-      defaultSettings.settings.vsPicgo.customOutputFormat
+      customOutputFormat || defaultSettings.settings.vsPicgo.customOutputFormat
     )
-    this.setConfigIfNotExist(
+
+    const customUploadName = vscode.workspace
+      .getConfiguration()
+      .get('picgo.customUploadName')
+
+    this.setConfig(
       'settings.vsPicgo.customUploadName',
-      defaultSettings.settings.vsPicgo.customUploadName
+      customUploadName || defaultSettings.settings.vsPicgo.customUploadName
     )
   }
 

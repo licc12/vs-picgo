@@ -1,5 +1,5 @@
 {
-  "name": "vs-picgo",
+  "name": "vs-picgo-gitlab",
   "displayName": "%ext.displayName%",
   "description": "%ext.description%",
   "repository": {
@@ -14,7 +14,7 @@
     "image upload",
     "picture upload"
   ],
-  "version": "2.1.6",
+  "version": "2.1.71",
   "publisher": "Spades",
   "engines": {
     "vscode": "^1.60.0"
@@ -24,6 +24,7 @@
   ],
   "icon": "logo.png",
   "activationEvents": [
+    "onCommand:picgo.upDateSetting",
     "onCommand:picgo.uploadImageFromClipboard",
     "onCommand:picgo.uploadImageFromExplorer",
     "onCommand:picgo.uploadImageFromInputBox",
@@ -35,29 +36,34 @@
   "contributes": {
     "commands": [
       {
+        "command": "picgo.upDateSetting",
+        "title": "%command.upload.updateSetting.title%",
+        "category": "pgo"
+      },
+      {
         "command": "picgo.uploadImageFromClipboard",
         "title": "%command.upload.clipboard.title%",
-        "category": "PicGo"
+        "category": "pgo"
       },
       {
         "command": "picgo.uploadImageFromExplorer",
         "title": "%command.upload.explorer.title%",
-        "category": "PicGo"
+        "category": "pgo"
       },
       {
         "command": "picgo.uploadImageFromInputBox",
         "title": "%command.upload.inputBox.title%",
-        "category": "PicGo"
+        "category": "pgo"
       },
       {
         "command": "picgo.webviewDemo",
         "title": "%command.webview.demo.title%",
-        "category": "PicGo"
+        "category": "pgo"
       },
       {
         "command": "picgo.webviewPicGoControlPanel",
         "title": "%command.webview.picGoControlPanel.title%",
-        "category": "PicGo"
+        "category": "pgo"
       }
     ],
     "keybindings": [
@@ -104,31 +110,17 @@
         "picgo.picBed.uploader": {
           "type": "string",
           "enum": [
-            "smms",
-            "aliyun",
-            "github",
-            "imgur",
-            "qiniu",
-            "tcyun",
-            "upyun",
-            "weibo"
+            "gitlab"
           ],
-          "default": "",
+          "default": "gitlab",
           "markdownDescription": "%config.picBed.uploader%"
         },
         "picgo.picBed.current": {
           "type": "string",
           "enum": [
-            "smms",
-            "aliyun",
-            "github",
-            "imgur",
-            "qiniu",
-            "tcyun",
-            "upyun",
-            "weibo"
+            "gitlab"
           ],
-          "default": "smms",
+          "default": "gitlab",
           "markdownDescription": "%config.picBed.current%"
         },
         "picgo.picBed.proxy": {
@@ -136,178 +128,40 @@
           "default": "",
           "markdownDescription": "%config.picBed.proxy%"
         },
-        "picgo.picBed.smms.token": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.accessKeyId": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.accessKeySecret": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.bucket": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.area": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.path": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.aliyun.customUrl": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.github.repo": {
+        "picgo.picBed.gitlab.host": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.github.repo.description%"
+          "markdownDescription": "%config.picBed.gitlab.host.description%"
         },
-        "picgo.picBed.github.token": {
+        "picgo.picBed.gitlab.group": {
           "type": "string",
-          "default": ""
+          "default": "",
+          "markdownDescription": "%config.picBed.gitlab.group.description%"
         },
-        "picgo.picBed.github.path": {
+        "picgo.picBed.gitlab.project": {
           "type": "string",
-          "default": ""
+          "default": "",
+          "markdownDescription": "%config.picBed.gitlab.project.description%"
         },
-        "picgo.picBed.github.customUrl": {
+        "picgo.picBed.gitlab.project_id": {
           "type": "string",
-          "default": ""
+          "default": "",
+          "markdownDescription": "%config.picBed.gitlab.project_id.description%"
         },
-        "picgo.picBed.github.branch": {
+        "picgo.picBed.gitlab.branch": {
           "type": "string",
-          "default": ""
+          "default": "dev",
+          "markdownDescription": "%config.picBed.gitlab.branch.description%"
         },
-        "picgo.picBed.imgur.clientId": {
+        "picgo.picBed.gitlab.token": {
           "type": "string",
-          "default": ""
+          "default": "",
+          "markdownDescription": "%config.picBed.gitlab.token.description%"
         },
-        "picgo.picBed.imgur.proxy": {
+        "picgo.picBed.gitlab.path": {
           "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.accessKey": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.secretKey": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.bucket": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.url": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.area": {
-          "type": "string",
-          "enum": [
-            "z0",
-            "z1",
-            "z2",
-            "na0",
-            "as0"
-          ],
-          "default": "z0"
-        },
-        "picgo.picBed.qiniu.options": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.qiniu.path": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.version": {
-          "type": "string",
-          "enum": [
-            "v4",
-            "v5"
-          ],
-          "default": "v5"
-        },
-        "picgo.picBed.tcyun.secretId": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.secretKey": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.bucket": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.appId": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.area": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.path": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.tcyun.customUrl": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.bucket": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.operator": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.password": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.options": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.path": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.upyun.url": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.weibo.chooseCookie": {
-          "type": "boolean",
-          "default": true
-        },
-        "picgo.picBed.weibo.username": {
-          "type": "string",
-          "default": ""
-        },
-        "picgo.picBed.weibo.quality": {
-          "type": "string",
-          "enum": [
-            "thumbnail",
-            "mw690",
-            "large"
-          ],
-          "default": "large"
-        },
-        "picgo.picBed.weibo.cookie": {
-          "type": "string",
-          "default": ""
+          "default": "",
+          "markdownDescription": "%config.picBed.gitlab.path.description%"
         }
       }
     }
@@ -324,13 +178,6 @@
     "cz": "lint-staged && git-cz",
     "release": "bump-version",
     "package": "yarn vsce package --yarn"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "post-merge": "sh .scripts/update_dependencies.sh"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,mjsx,cjs,cjsx}": [
