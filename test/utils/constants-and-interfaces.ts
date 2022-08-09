@@ -33,6 +33,19 @@ export interface IVSPicgoConfiguration {
   'picgo.picBed.gitlab.project_id': string | undefined
   'picgo.picBed.gitlab.path': string | undefined
 
+  // minio picBed
+  'picgo.picBed.minio.endPoint'?: string
+  'picgo.picBed.minio.subdir'?: string
+  'picgo.picBed.minio.port'?: number
+  'picgo.picBed.minio.accessKey'?: string
+  'picgo.picBed.minio.secretKey'?: string
+  'picgo.picBed.minio.bucketName'?: string
+  'picgo.picBed.minio.useSSL'?: boolean
+  'picgo.picBed.minio.region'?: string
+  'picgo.picBed.minio.transport'?: string
+  'picgo.picBed.minio.sessionToken'?: string
+  'picgo.picBed.minio.partSize'?: number
+
   // imgur picBed
   'picgo.picBed.imgur.clientId': string | undefined
   'picgo.picBed.imgur.proxy': string | undefined
@@ -118,6 +131,19 @@ export const DEFAULT_CONFIGS: IVSPicgoConfiguration = {
   'picgo.picBed.gitlab.project': '',
   'picgo.picBed.gitlab.project_id': '',
   'picgo.picBed.gitlab.path': '',
+
+  // minio picBed
+  'picgo.picBed.minio.endPoint': '',
+  'picgo.picBed.minio.subdir': '',
+  'picgo.picBed.minio.port': 443,
+  'picgo.picBed.minio.accessKey': '',
+  'picgo.picBed.minio.secretKey': '',
+  'picgo.picBed.minio.bucketName': '',
+  'picgo.picBed.minio.useSSL': true,
+  'picgo.picBed.minio.region': '',
+  'picgo.picBed.minio.transport': '',
+  'picgo.picBed.minio.sessionToken': '',
+  'picgo.picBed.minio.partSize': 64,
 
   // imgur picBed
   'picgo.picBed.imgur.clientId': '',

@@ -1,5 +1,5 @@
 {
-  "name": "vs-picgo-gitlab",
+  "name": "vs-picgo-minio",
   "displayName": "%ext.displayName%",
   "description": "%ext.description%",
   "repository": {
@@ -14,7 +14,7 @@
     "image upload",
     "picture upload"
   ],
-  "version": "2.1.71",
+  "version": "2.1.72",
   "publisher": "Spades",
   "engines": {
     "vscode": "^1.60.0"
@@ -110,17 +110,17 @@
         "picgo.picBed.uploader": {
           "type": "string",
           "enum": [
-            "gitlab"
+            "minio"
           ],
-          "default": "gitlab",
+          "default": "minio",
           "markdownDescription": "%config.picBed.uploader%"
         },
         "picgo.picBed.current": {
           "type": "string",
           "enum": [
-            "gitlab"
+            "minio"
           ],
-          "default": "gitlab",
+          "default": "minio",
           "markdownDescription": "%config.picBed.current%"
         },
         "picgo.picBed.proxy": {
@@ -128,40 +128,55 @@
           "default": "",
           "markdownDescription": "%config.picBed.proxy%"
         },
-        "picgo.picBed.gitlab.host": {
+        "picgo.picBed.minio.endPoint": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.host.description%"
+          "markdownDescription": "%config.picBed.minio.endPoint.description%"
         },
-        "picgo.picBed.gitlab.group": {
+        "picgo.picBed.minio.subdir": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.group.description%"
+          "markdownDescription": "%config.picBed.minio.subdir.description%"
         },
-        "picgo.picBed.gitlab.project": {
+        "picgo.picBed.minio.port": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.project.description%"
+          "markdownDescription": "%config.picBed.minio.port.description%"
         },
-        "picgo.picBed.gitlab.project_id": {
+        "picgo.picBed.minio.accessKey": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.project_id.description%"
+          "markdownDescription": "%config.picBed.minio.accessKey.description%"
         },
-        "picgo.picBed.gitlab.branch": {
-          "type": "string",
-          "default": "dev",
-          "markdownDescription": "%config.picBed.gitlab.branch.description%"
-        },
-        "picgo.picBed.gitlab.token": {
+        "picgo.picBed.minio.secretKey": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.token.description%"
+          "markdownDescription": "%config.picBed.minio.secretKey.description%"
         },
-        "picgo.picBed.gitlab.path": {
+        "picgo.picBed.minio.bucketName": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%config.picBed.gitlab.path.description%"
+          "markdownDescription": "%config.picBed.minio.bucketName.description%"
+        },
+        "picgo.picBed.minio.useSSL": {
+          "type": "boolean",
+          "default": "true",
+          "markdownDescription": "%config.picBed.minio.useSSL.description%"
+        },
+        "picgo.picBed.minio.region": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.picBed.minio.region.description%"
+        },
+        "picgo.picBed.minio.transport": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.picBed.minio.transport.description%"
+        },
+        "picgo.picBed.minio.partSize": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.picBed.minio.partSize.description%"
         }
       }
     }
@@ -204,6 +219,7 @@
     "@types/glob": "^7.1.1",
     "@types/inquirer": "^6.5.0",
     "@types/istanbul": "^0.4.30",
+    "@types/minio": "7.0.13",
     "@types/mocha": "^7.0.1",
     "@types/node": "16.10.2",
     "@types/react": "17.0.22",
@@ -254,6 +270,7 @@
     "@luozhu/vscode-channel": "0.8.0",
     "@mui/icons-material": "5.0.1",
     "@mui/material": "5.0.1",
+    "@picgo/i18n": "1.0.0",
     "@picgo/store": "1.0.3",
     "@rematch/core": "2.1.1",
     "@rematch/immer": "2.1.2",
@@ -262,6 +279,7 @@
     "@rematch/updated": "2.1.1",
     "appdata-path": "1.0.0",
     "immer": "9.0.6",
+    "minio": "7.0.30",
     "picgo": "1.5.0-alpha.0",
     "pupa": "3.1.0",
     "react": "17.0.2",

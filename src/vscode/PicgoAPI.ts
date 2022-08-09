@@ -28,52 +28,77 @@ export class PicgoAPI {
   }
 
   initConfig() {
-    const host = vscode.workspace
+    const endPoint = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.host')
-    if (host) {
-      this.setConfig('picBed.gitlab.host', host)
+      .get('picgo.picBed.minio.endPoint')
+    if (endPoint) {
+      this.setConfig('picBed.minio.endPoint', endPoint)
+    }
+    const subdir = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.minio.subdir')
+    if (subdir) {
+      this.setConfig('picBed.minio.subdir', subdir)
     }
 
-    const group = vscode.workspace
+    const port = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.group')
-    if (group) {
-      this.setConfig('picBed.gitlab.group', group)
+      .get('picgo.picBed.minio.port')
+    if (port) {
+      this.setConfig('picBed.minio.port', port)
     }
-    const project = vscode.workspace
+    // const useSSL = vscode.workspace
+    //   .getConfiguration()
+    //   .get('picgo.picBed.minio.useSSL')
+    // if () {
+    //   this.setConfig('picBed.minio.project', useSSL)
+    // }
+
+    const accessKey = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.project')
-    if (project) {
-      this.setConfig('picBed.gitlab.project', project)
+      .get('picgo.picBed.minio.accessKey')
+    if (accessKey) {
+      this.setConfig('picBed.minio.accessKey', accessKey)
     }
 
-    const projectId = vscode.workspace
+    const secretKey = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.project_id')
-    if (projectId) {
-      this.setConfig('picBed.gitlab.project_id', projectId)
+      .get('picgo.picBed.minio.secretKey')
+    if (secretKey) {
+      this.setConfig('picBed.minio.secretKey', secretKey)
     }
 
-    const branch = vscode.workspace
+    const region = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.branch')
-    if (branch) {
-      this.setConfig('picBed.gitlab.branch', branch)
+      .get('picgo.picBed.minio.region')
+    if (region) {
+      this.setConfig('picBed.minio.region', region)
     }
 
-    const token = vscode.workspace
+    const transport = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.token')
-    if (token) {
-      this.setConfig('picBed.gitlab.token', token)
+      .get('picgo.picBed.minio.transport')
+    if (transport) {
+      this.setConfig('picBed.minio.transport', transport)
     }
 
-    const path = vscode.workspace
+    const sessionToken = vscode.workspace
       .getConfiguration()
-      .get('picgo.picBed.gitlab.path')
-    if (path) {
-      this.setConfig('picBed.gitlab.path', path)
+      .get('picgo.picBed.minio.sessionToken')
+    if (sessionToken) {
+      this.setConfig('picBed.minio.sessionToken', sessionToken)
+    }
+    const partSize = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.minio.partSize')
+    if (partSize) {
+      this.setConfig('picBed.minio.partSize', partSize)
+    }
+    const bucketName = vscode.workspace
+      .getConfiguration()
+      .get('picgo.picBed.minio.bucketName')
+    if (bucketName) {
+      this.setConfig('picBed.minio.bucketName', bucketName)
     }
 
     const customOutputFormat = vscode.workspace

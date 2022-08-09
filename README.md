@@ -51,7 +51,7 @@
 
 - Default
 
-  - The default image hosting is [gitlab](https://gitlab.example.com/).
+  - The default image hosting is [minio](https://minio.example.com/).
 
 - Custom
 

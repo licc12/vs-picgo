@@ -1,5 +1,5 @@
 {
-  "ext.displayName": "PicGo-GitLab",
+  "ext.displayName": "PicGo-Minio",
   "ext.description": "A fast and powerful image uploading plugin for VSCode based on PicGo. Supports most image types (png, jpg, gif, etc.) and many image hosting services (smms, qiniu, imgur, etc.)!",
   "command.upload.updateSetting.title": "Update PicGo Setting",
   "command.upload.clipboard.title": "Upload from clipboard",
@@ -7,7 +7,7 @@
   "command.upload.inputBox.title": "Upload from input box",
   "command.webview.demo.title": "Open demo page",
   "command.webview.picGoControlPanel.title": "Open PicGo Control Panel",
-  "config.title": "PicGo-GitLab",
+  "config.title": "PicGo-Minio",
   "config.configPath.description": "The path to your PicGo-Core configuration. PicGo will use `#picgo.picBed#` if this is not specified. Please see [PicGo-Core Docs](https://picgo.github.io/PicGo-Core-Doc/zh/guide/config.html#%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) and [PicGo Docs](https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E5%9B%BE%E5%BA%8A%E5%8C%BA) for more detail about configuration file.",
   "config.dataPath.description": "The path to your data file, including all uploaded images' info. PicGo will use `your_home_dir/vs-picgo-data.json` if this is not specified.",
   "config.customUploadName.description": "Customize the name of the image to be uploaded, image will be renamed before uploading.\n- `${fileName}`: the name of the original image, without extension name.\n **Notice: If you selected some text before uploading, the selection will become the `fileName` of the image to be uploaded.**\n- `${extName}`: the extension name of the original image.\n- `${mdFileName}`: the name of the current editing markdown file.\n- `${date}`: YY-MM-DD formatted date.\n- `${dateTime}`: YY-MM-DD-hh-mm-ss formatted date.\n\nExamples:\n- `${fileName}-${date}${extName}` -> `picName-2016-07-25.jpg`\n- `${mdFileName}`-`${dateTime}${extName}` -> `markdownName-2017-04-12-22-28-10.jpg`",
@@ -30,5 +30,16 @@
   "config.picBed.gitlab.project_id.description": "gitlab project id",
   "config.picBed.gitlab.branch.description": "gitlab project branch",
   "config.picBed.gitlab.token.description": "gitlab's api token",
-  "config.picBed.gitlab.path.description": "img path in response json (eg:url or data.url)"
+  "config.picBed.gitlab.path.description": "img path in response json (eg:url or data.url)",
+  "config.picBed.minio.endPoint.description": "Minio主机名或者IP地址(eg:https://minio.com)",
+  "config.picBed.minio.subdir.description": "存储桶里的子目录，默认'',示例：aa/bb/,注意开始没有/，结尾有/",
+  "config.picBed.minio.port.description": "TCP/IP端口号。可选，默认值是，如果是http,则默认80端口，如果是https,则默认是443端口",
+  "config.picBed.minio.accessKey.description": "accessKey类似于用户ID，用于唯一标识你的账户",
+  "config.picBed.minio.secretKey.description": "secretKey是你账户的密码",
+  "config.picBed.minio.bucketName.description": "存储桶",
+  "config.picBed.minio.useSSL.description": "如果是true，则用的是https而不是http,默认值是true",
+  "config.picBed.minio.region.description": "设置该值以覆盖自动发现存储桶region。（可选）",
+  "config.picBed.minio.transport.description": "将此值设置为在自定义传输中传递。(可选)",
+  "config.picBed.minio.sessionToken.description": "设置此值以提供x-amz-security-token(特定于AWS S3)。(可选)",
+  "config.picBed.minio.partSize.description": "设置此值以覆盖多部分上传的默认部分大小64MB"
 }
