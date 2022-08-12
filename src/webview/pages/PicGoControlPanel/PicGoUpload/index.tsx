@@ -94,10 +94,10 @@ export const PicGoUpload = () => {
           />
           <Typography sx={{ textAlign: 'center' }} variant="body1">
             <Box component="span" sx={{ display: 'inline-block' }}>
-              Drag and drop some files here to upload,
+              拖拽一些文件到这里上传,
             </Box>{' '}
             <Box component="span" sx={{ display: 'inline-block' }}>
-              or click to select files
+              或单击选择文件
             </Box>
           </Typography>
         </Paper>
@@ -112,7 +112,7 @@ export const PicGoUpload = () => {
             height
           }}>
           <Typography component="h2" gutterBottom variant="h6">
-            Quick Upload
+            快捷上传
           </Typography>
           <Grid
             alignItems="center"
